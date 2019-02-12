@@ -14,9 +14,18 @@ interface ProjectService
  * 冒号，： 语法来实现一个接口，ps，和java 是一样的。
  */
 class ProjectServiceImpl(override val name: String, override val owmer: String) : ProjectService{
+
+
     override fun save(string: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        println("save func had been invoked.")
     }
 
 }
 
+
+fun main(args: Array<String>) {
+    val projectServiceIpl = ProjectServiceImpl("tom","Jim")
+    projectServiceIpl.save("345")
+
+
+}
