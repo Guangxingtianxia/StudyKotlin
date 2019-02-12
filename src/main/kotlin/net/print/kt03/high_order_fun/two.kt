@@ -19,7 +19,6 @@ fun findPerson(): Person? {
 fun main(args: Array<String>) {
 
     val p = findPerson()
-
     // 通常，调用时引用加上"?"，使得代码更加强健
     println(p?.age)
     println(p?.name)

@@ -8,18 +8,12 @@ public class Hello2
 {
     public static void main(String[] args)
     {
-
         List<String> rawData = Arrays.asList(args);
         for (String rawDatum : rawData)
         {
             System.out.println(" args :"+rawDatum);
         }
-
-
     }
-
-
-
 }
 
 
