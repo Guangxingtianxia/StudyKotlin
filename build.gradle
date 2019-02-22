@@ -3,7 +3,11 @@ buildscript {
 
     repositories {
         // mavenCentral()
-        jcenter()
+       // jcenter()
+        maven {
+            url "http://maven.aliyun.com/nexus/content/groups/public/"
+        }
+
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -13,21 +17,28 @@ buildscript {
 group 'org.a'
 version '1.0-SNAPSHOT'
 
-// 也可以写java代码
 apply plugin: 'kotlin'
 apply plugin: 'java'
 
 repositories {
-       mavenCentral()
+   // mavenCentral()
 //    jcenter()
+    maven {
+        url "http://maven.aliyun.com/nexus/content/groups/public/"
+    }
+
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+    testCompile 'org.junit.jupiter:junit-jupiter-api:5.2.0'
+    testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.2.0'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-reflect
-    compile "org.jetbrains.kotlin:kotlin-reflect:1.3.11"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.3.11"
     // https://mvnrepository.com/artifact/io.reactivex.rxjava2/rxjava
-   // implementation "io.reactivex.rxjava2:rxjava: second.0.0"
+    // implementation "io.reactivex.rxjava2:rxjava: second.0.0"
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.1'
